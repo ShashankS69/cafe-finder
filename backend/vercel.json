@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "script.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "script.js"
+      }
+    ],
+    "env": {
+      "SERPAPI_API_KEY": ""
+    }
+  }
+  
