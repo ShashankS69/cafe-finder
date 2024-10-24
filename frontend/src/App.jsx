@@ -6,11 +6,13 @@ const App = () => {
   const [cafes, setCafes] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(false); // New state for dark mode
 
-  // Fetch cafes based on the location
   useEffect(() => {
     const fetchCafes = async () => {
       try {
-        const response = await axios.get(`https://backend-cafe-one.vercel.app/search-cafe?location=${location}`);
+        // for localhost uncomment this 
+        const response = await axios.get(`http://localhost:3000/search-cafe?location=${location}`);
+        // for vercel uncomment this
+        // const response = await axios.get(`https://backend-cafe-one.vercel.app/search-cafe?location=${location}`);
         setCafes(response.data);
       } catch (error) {
         console.error('Error fetching cafe data', error);
